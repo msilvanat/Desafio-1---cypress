@@ -16,7 +16,7 @@ describe("Desafío 1 Cypress", () => {
     cy.get('a[id="todolistlink"]').click();
     cy.get('#task').type('Hacer examen de inglés');
     cy.get('#sendTask').click();
-    cy.get('[id*="completed"]').click();
+    cy.get('[class="chakra-text css-8atqhb"]').click();
     cy.wait(5000);
     cy.get('#logout').click();
   });
