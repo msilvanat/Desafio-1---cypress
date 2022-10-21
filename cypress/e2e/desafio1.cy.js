@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 describe("Desafío 1 Cypress", () => {
   const numero = Math.floor(Math.random() * 1000)
+  let tarea = 'Hacer examen de inglés';
   it('Desafío 1', () => {
     cy.visit('https://pushing-front.vercel.app/');
     cy.get('[id="user"]').type(`silvana${numero}`);
@@ -16,7 +17,8 @@ describe("Desafío 1 Cypress", () => {
     cy.get('a[id="todolistlink"]').click();
     cy.get('#task').type('Hacer examen de inglés');
     cy.get('#sendTask').click();
-    cy.get('[class="chakra-text css-8atqhb"]').click();
+    // cy.get('[class="chakra-text css-8atqhb"]').click();
+    cy.contains(tarea);
     cy.wait(5000);
     cy.get('#logout').click();
   });
